@@ -54,13 +54,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 75vh;
     overflow: hidden;
 
 }
 
 .as-card .id__wrapper {
-  width: 400px;
+  /* width: 400px; */
+  max-width: 400px;
   overflow: hidden;
   margin-bottom: 1em;
   /* margin: 2em auto 0; */
@@ -85,29 +86,14 @@
         width: 83%;
     }
     100%{
-        width: 400px;
+        width: 90%;
     }
 }
 .as-card .details>div{
     flex-direction: column;
 }
-.as-card .deco,
-.as-card .deco:before {
-  opacity: 1;
-  width: 120%;
-  animation: 0.8s deco-piece forwards;
-}
 
-@keyframes deco-piece {
-    0% {
-      opacity: 0;
-      width: 0%;
-    }
-    100% {
-      opacity: 1;
-      width: 120%;
-    }
-  }
+
 
 .as-card #previewImage{
    height: 128px;
@@ -115,7 +101,6 @@
 }
 .as-card #imgConatainer,
 .as-card #imageHere,
-.as-card #imageHere>span,
 .as-card #C>h2{
    width: 100%;
    border: 2px solid #111827;
@@ -140,5 +125,40 @@ display: block;
         width: 95%;
         overflow-y: auto;
     }
+    /* #previewImage{
+        height: 23vh;
+        width:  23vh;
+    } */
 }
+
+@media screen and (max-width:700px) {
+    #previewImage{
+        height: 22vh;
+        width:  22vh;
+    }
+}
+
+@media screen and (max-width:450px) {
+    @keyframes hello {
+        0%{
+            width: 83%;
+        }
+        100%{
+            width: 80%;
+        }
+    }
+    #buttonCon{
+        width: 75%;
+    }
+ }
+@media screen and (max-width:350px) {
+    @keyframes hello {
+        0%{
+            width: 83%;
+        }
+        100%{
+            width: 90%;
+        }
+    }
+ }
 

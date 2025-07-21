@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="form.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="box-border overflow-hidden  p-0 m-0 italic font-bold">
+<body class="box-border overflow-hidden   p-0 m-0 italic font-bold">
     <!-- music sounds -->
     <div>
         <audio src="sounds/sounds.mp3"  autoplay loop id="audio"></audio>
@@ -21,31 +21,46 @@
                 <div class="hidden button"></div>
                 <span class="hidden">ID card</span>
             </div>
-            <div class="flex justify-center items-center flex-[0.8] details">
-                <div class="flex-[0.9] flex justify-between flex-row">
+            <div class="flex justify-center rounded-lg items-center flex-[0.8] details">
+                <div class="flex-[0.9]  flex justify-between flex-row">
                     <div class="flex-[0.35] flex flex-col justify-center  max-w-3xl" id="img">
-                        <div class="upload-container cursor-pointer flex-[1] items-center overflow-hidden justify-center flex flex-col" >
-                            <div class="flex flex-[1] justify-center flex-col items-center" id="imageHere">
+                        <div class="upload-container rounded-lg cursor-pointer flex flex-[1] overflow-hidden">
+                            <!-- <div class="flex flex-[1] justify-center flex-col items-center" id="imageHere">
                             <h2 class="bg-gray-500 flex-[1] flex justify-center items-center text-white text-xl w-52">Upload an Image</h2>
                             <span class="bg-gray-600 flex-[1] flex hidden justify-center items-center text-white text-xl w-52">No image Here Please</span>
                             </div>
-                             <input type="file" id="imageInput" class="hidden  flex-[1] w-52" accept="image/*">
-                             <div  class="flex flex-[1] justify-center cursor-default bg-gray-400 flex-col items-center hidden" id="imgConatainer">
+                             <div  class="flex flex-[1] bg-black justify-center cursor-default bg-gray-400 flex-col items-center hidden" id="imgConatainer">
                                 <div  id="previewImage" class=" bg-gray-400 bg-opacity-70 bg-blend-multiply rounded-full bg-cover bg-center h-52 w-52"></div>     
+                             </div> -->
+                             <div class="flex bg-gray-500 flex-[1] justify-center items-center bg-black flex-col" id="imageHere">
+                                <h2 class="text-white text-center text-xl">Upload an Image</h2>
+                                <span class="text-center hidden text-white text-xl">No image Here Please</span>
+                             </div>
+
+                             <input type="file" id="imageInput" class="hidden  flex-[1]" accept="image/*">
+
+                             <div class="flex flex-[1] bg-black justify-center overflow-hidden cursor-default bg-gray-400 flex-col items-center hidden"  id="imgConatainer">
+                                <div  id="previewImage" class=" bg-gray-400 bg-opacity-70 bg-blend-multiply rounded-full bg-cover h-52 w-52 bg-center"></div>     
                              </div>
                           </div>
                     </div>
-                    <div class="flex-[0.63] bg-gray-200"></div>
+                    <div class="flex-[0.63] bg-gray-200 rounded-lg"></div>
                 </div>
             </div>
 
         </div>
         <div class="click flex-[0.3] gap-x-11 flex justify-center items-center  max-w-3xl w-4/5" id="buttonCon">
-            <button class="bg-gray-500 js-switch w-32 h-12 text-white" id="click">Click</button>
-            <button class="bg-gray-500 w-32 h-12 text-white hidden" id="saveDtaails">save</button>
-            <button onclick="localStorage.clear(); location.reload();" class=" bg-gray-500 w-32 h-12 text-white hidden">Edit</button>
+            <button class="bg-gray-500 rounded-lg js-switch w-32 h-12 text-white" id="click">Click</button>
+            <button class="bg-gray-500 rounded-lg w-32 h-12 text-white hidden" id="saveDtaails">save</button>
+            <button onclick="localStorage.clear(); location.reload();" class=" bg-gray-500 w-32 h-12 text-white rounded-lg hidden">Clear Data</button>
 
         </div>
+    </div>
+    <div class="bg-gray-600 hidden w-full absolute flex justify-center" id="message">
+        <p>Data has been saved</p>
+    </div>
+    <div class="bg-gray-600 hidden w-full absolute flex justify-center" id="messageClear">
+        <p>Data has been successfully cleared</p>
     </div>
 
 </body>

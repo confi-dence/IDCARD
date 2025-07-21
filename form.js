@@ -5,7 +5,8 @@ const myaudio = document.getElementById('audio'),
   imageHere = document.getElementById('imageHere'),
   imgConatainer = document.getElementById('imgConatainer'),
   saveDtaails = document.getElementById('saveDtaails'),
-  Edit = document.getElementById('Edit')
+  Edit = document.getElementById('Edit'),
+  messages = document.getElementById('message')
 
 let uploadedImageData = null; // To hold image temporarily
 
@@ -16,22 +17,7 @@ switchCarsd.addEventListener('click', function () {
 });
 
 // Background music volume
-myaudio.volume = 0.4;
-
-// RESUME MUSIC if saved state exists
-window.addEventListener('load', function () {
-  const musicState = localStorage.getItem('musicState');
-
-  if (musicState === 'play') {
-    myaudio.muted = false;
-
-    // Some browsers need this in a try-catch
-    myaudio.play().catch(err => {
-      console.warn("Autoplay blocked. Music will resume after user interaction.");
-    });
-  }
-});
-
+myaudio.volume = 0.2;
 
 // SAVE BUTTON: save image & mode to localStorage
 saveDtaails.addEventListener('click', function () {
@@ -42,13 +28,23 @@ saveDtaails.addEventListener('click', function () {
       localStorage.setItem('userImage', uploadedImageData);
     }
     switchCarsd.style.display = 'none'
-    alert('Saved');
+    // alert('Saved');
     saveDtaails.style.display = 'none';
-    localStorage.setItem('musicState', 'play'); // ← Add this line
-
+    messages.style.display = "flex"
+    setTimeout(() => {
+      messages.style.display = "none"
+    }, 2000);
   }
 });
 
+document.addEventListener('visibilitychange', ()=>{
+  if (document.visibilityState === 'hidden') {
+    myaudio.pause();
+    myaudio.currentTime = 0
+  }else{
+    myaudio.play()
+  }
+})
 // RESTORE MODE & IMAGE FROM LOCALSTORAGE
 let savemode = localStorage.getItem('mode');
 const storedImage = localStorage.getItem('userImage');
