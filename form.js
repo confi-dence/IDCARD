@@ -31,9 +31,9 @@ saveDtaails.addEventListener('click', function () {
     // alert('Saved');
     saveDtaails.style.display = 'none';
     messages.style.display = "flex";
-    imageHere.removeEventListener();
+    // imageHere.removeEventListener();
     setTimeout(() => {
-      messages.style.display = "none"
+      messages.style.display = "none";
     }, 2000);
   }
 });
