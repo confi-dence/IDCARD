@@ -138,7 +138,7 @@ display: block;
     }
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width:550px) {
     @keyframes hello {
         0%{
             width: 83%;
@@ -147,9 +147,28 @@ display: block;
             width: 80%;
         }
     }
+    .details{
+        width: 94%;
+    }
+    .details>div{
+        flex: 0.95;
+    }
     #buttonCon{
         width: 75%;
     }
+    #previewImage{
+        height: 20vh;
+        width:  20vh;
+    }
+    .as-card #loginForm{
+    height: 70vh;
+}
+#img{
+flex: 0.42;
+}
+#Logindetails{
+flex: 0.56;
+}
  }
 @media screen and (max-width:350px) {
     @keyframes hello {

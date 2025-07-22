@@ -30,7 +30,8 @@ saveDtaails.addEventListener('click', function () {
     switchCarsd.style.display = 'none'
     // alert('Saved');
     saveDtaails.style.display = 'none';
-    messages.style.display = "flex"
+    messages.style.display = "flex";
+    imageHere.removeEventListener();
     setTimeout(() => {
       messages.style.display = "none"
     }, 2000);
