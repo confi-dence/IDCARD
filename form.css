@@ -121,6 +121,9 @@
 .as-card #imageHere>span{
   display: flex;
 }
+.as-card #imageHere{
+    cursor: default;
+}
 .as-card #buttonCon>button:nth-child(2),
 .as-card #buttonCon>button:nth-child(3){
 display: block;

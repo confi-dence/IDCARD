@@ -52,8 +52,9 @@ clearData.addEventListener('click', function () {
   messageClear.style.display = 'flex'
   localStorage.clear()
   setTimeout(() => {
-    location.reload()
     window.location.href = window.location.href;
+    
+    messageClear.style.display = 'none'
   }, 2000);
 })
 
@@ -95,5 +96,8 @@ imageInput.addEventListener('change', function () {
 
 // Trigger file input when the image container is clicked
 imageHere.addEventListener('click', function () {
-  imageInput.click();
+  if (!document.body.classList.contains('as-card')) {
+    imageInput.click();
+    imageHere.style.cursor = 'default'
+  }
 });
