@@ -6,7 +6,9 @@ const myaudio = document.getElementById('audio'),
   imgConatainer = document.getElementById('imgConatainer'),
   saveDtaails = document.getElementById('saveDtaails'),
   Edit = document.getElementById('Edit'),
-  messages = document.getElementById('message')
+  messagesaved = document.getElementById('message'),
+  messageClear = document.getElementById('messageClear'),
+  clearData = document.getElementById('clearData')
 
 let uploadedImageData = null; // To hold image temporarily
 
@@ -19,6 +21,14 @@ switchCarsd.addEventListener('click', function () {
 // Background music volume
 myaudio.volume = 0.2;
 
+document.addEventListener('visibilitychange', ()=>{
+  if (document.visibilityState === 'hidden') {
+    myaudio.pause();
+    myaudio.currentTime = 0
+  }else{
+    myaudio.play()
+  }
+})
 // SAVE BUTTON: save image & mode to localStorage
 saveDtaails.addEventListener('click', function () {
   if (document.body.classList.contains('as-card')) {
@@ -30,22 +40,21 @@ saveDtaails.addEventListener('click', function () {
     switchCarsd.style.display = 'none'
     // alert('Saved');
     saveDtaails.style.display = 'none';
-    messages.style.display = "flex";
+    messagesaved.style.display = "flex";
     // imageHere.removeEventListener();
     setTimeout(() => {
-      messages.style.display = "none";
+      messagesaved.style.display = "none";
     }, 2000);
   }
 });
 
-document.addEventListener('visibilitychange', ()=>{
-  if (document.visibilityState === 'hidden') {
-    myaudio.pause();
-    myaudio.currentTime = 0
-  }else{
-    myaudio.play()
-  }
+clearData.addEventListener('click', function () {
+  messageClear.style.display = 'flex'
+  setTimeout(() => {
+    messageClear.style.display = 'none'
+  }, 2000);
 })
+
 // RESTORE MODE & IMAGE FROM LOCALSTORAGE
 let savemode = localStorage.getItem('mode');
 const storedImage = localStorage.getItem('userImage');
