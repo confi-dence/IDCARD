@@ -50,8 +50,10 @@ saveDtaails.addEventListener('click', function () {
 
 clearData.addEventListener('click', function () {
   messageClear.style.display = 'flex'
+  localStorage.clear()
   setTimeout(() => {
-    messageClear.style.display = 'none'
+    location.reload()
+    window.location.href = window.location.href;
   }, 2000);
 })
 
