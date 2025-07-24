@@ -82,7 +82,7 @@ imageInput.addEventListener('change', function () {
     const reader = new FileReader();
 
     reader.onload = function () {
-      uploadedImageData = reader.result;
+     uploadedImageData = reader.result;
 
       previewImage.style.backgroundImage = `url('${uploadedImageData}')`;
       previewImage.style.display = "flex";
