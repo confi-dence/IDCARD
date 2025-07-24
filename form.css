@@ -220,6 +220,12 @@ flex: 0.28;
 #Logindetails{
 flex: 0.7;
 }
+.as-card #loginForm{
+    position: relative;
+    height: 72vh;
+    top: -3vh;
+
+}
  }
 @media screen and (max-width:350px) {
     @keyframes hello {
