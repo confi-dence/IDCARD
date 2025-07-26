@@ -8,6 +8,18 @@
 .details>div:nth-child(1){
     height: 88%;
 }
+textarea,
+input{
+    border-bottom: 1px solid black;
+    border-radius: 8px;
+    
+}
+#checkbox{
+    display: grid;
+    grid-template-columns:  auto auto;
+    row-gap: 10px;
+    column-gap: 10px;
+}
 .as-card #loginForm::before{
     content: '';
     position: absolute;
@@ -60,7 +72,59 @@
     align-items: center;
     height: 72vh;
     overflow: hidden;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 60px repeat(4, auto);
+    grid-template-areas: "your-face your-face" "name name" "job job" "country country" "blood blood" "twitter codepen";
+}
+.as-card #loginForm input, .as-card #loginForm textarea {
+    background: transparent;
+    border: none;
+  }
+  .as-card #loginForm textarea {
+    line-height: 0.9;
+    /* background: #000; */
+    height: 63px;
+  }
+ 
+  .as-card #loginForm #checkbox input {
+    display: none;
+  }
+  .as-card #loginForm #checkbox>div>input:not(:checked),
+.as-card #loginForm #checkbox>div>input:not(:checked) + label {
+  display: none;
+}
+.as-card #checkbox{
+    grid-template-columns: auto auto auto;
+} 
+.as-card .name label:not(.label-check),
+.as-card .job label:not(.label-check),
+.as-card .country label:not(.label-check),
+.as-card .blood label:not(.label-check) {
+  display: none;
+}
+.as-card #jobTitl{
+    flex-direction: column;
+}
+.as-card textarea{
+   font-size: 24px;
+   padding-left: 0;
+   margin-top: 2vh;
+}
+.as-card input{
+   padding-left: 0;
 
+}
+.as-card #containaer{
+  justify-content: center;
+  align-items: flex-start;
+}
+.as-card .twitter{
+  flex: 0.3;
+}
+
+.as-card .codepen{
+    flex: 0.3;
 }
 
 #clearData,
@@ -137,7 +201,12 @@
     flex: 0.67;
 }
 
-
+.as-card #img{
+    flex: 0.28;
+    }
+    .as-card #Logindetails{
+    flex: 0.7;
+    }
 
 .as-card #previewImage{
    height: 128px;
@@ -164,6 +233,10 @@
 .as-card #buttonCon>button:nth-child(2),
 .as-card #buttonCon>button:nth-child(3){
 display: block;
+}
+.as-card .twitter>input,
+.as-card .codepen>input{
+ height: 30%;
 }
 
 @media screen and (max-width:800px) {
@@ -209,17 +282,18 @@ display: block;
     }
 
 .as-card #img{
-flex: 0.28;
+flex: 0.25;
 }
 .as-card #Logindetails{
-flex: 0.7;
+flex: 0.73;
 }
 #img{
-flex: 0.28;
+flex: 0.35;
 }
 #Logindetails{
-flex: 0.7;
+flex: 0.63;
 }
+
 .as-card #loginForm{
     position: relative;
     height: 72vh;
@@ -235,6 +309,15 @@ flex: 0.7;
         100%{
             width: 90%;
         }
+    }
+    #click{
+        height: 40px;
+    }
+    h1{
+        font-size: 24px;
+    }
+    #imageHere{
+        font-size: 16px;
     }
  }
 
