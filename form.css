@@ -313,7 +313,7 @@ flex: 0.63;
 
 }
  }
-@media screen and (max-width:350px) {
+@media screen and (max-width:400px) {
     @keyframes hello {
         0%{
             width: 83%;
