@@ -3,9 +3,7 @@
     width: 90%;
 }
 
-.as-card #LoginFormContainer{
-    height: 101vh;
-}
+
 .details{
     border: 1px solid black;
 }
@@ -257,6 +255,9 @@ display: block;
         width: 95%;
         overflow-y: auto;
     }
+    .as-card #LoginFormContainer{
+        height: 101vh;
+    }
 }
 
 @media screen and (max-width:700px) {
@@ -334,5 +335,6 @@ flex: 0.63;
         height: 17vh;
         width:  17vh;
     }
+   
  }
 

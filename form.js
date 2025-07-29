@@ -42,6 +42,11 @@ document.addEventListener('visibilitychange', ()=>{
 saveDtaails.addEventListener('click', function () {
   if (document.body.classList.contains('as-card')) {
     localStorage.setItem('mode', 'save');
+    localStorage.setItem('fullName', userName.value);
+
+    inputs.forEach((input, index) => {
+      localStorage.setItem(`input-${index}`, input.value);
+    });
 
     if (uploadedImageData) {
       localStorage.setItem('userImage', uploadedImageData);
@@ -70,7 +75,7 @@ clearData.addEventListener('click', function () {
 // RESTORE MODE & IMAGE FROM LOCALSTORAGE
 let savemode = localStorage.getItem('mode');
 const storedImage = localStorage.getItem('userImage');
-
+const storedFullName = localStorage.getItem('fullName');
 if (savemode === 'save') {
   document.body.classList.add('as-card');
   saveDtaails.style.display = 'none';
@@ -81,6 +86,18 @@ if (savemode === 'save') {
     imgConatainer.style.display = "flex";
     imageHere.style.display = 'none';
   }
+  inputs.forEach((input, index) => {
+    const savedValue = localStorage.getItem(`input-${index}`);
+    if (savedValue !== null) {
+      input.value = savedValue;
+    }
+  });
+  
+  if (storedFullName) {
+    userName.value = storedFullName;
+  }
+
+ 
 }
 
 // IMAGE UPLOAD
