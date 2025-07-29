@@ -4,7 +4,7 @@
 }
 
 .as-card #LoginFormContainer{
-    height: 106vh;
+    height: 101vh;
 }
 .details{
     border: 1px solid black;
@@ -74,7 +74,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 75vh;
     overflow: hidden;
     grid-gap: 5px;
     grid-template-columns: repeat(2, 1fr);
