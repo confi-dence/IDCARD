@@ -2,6 +2,10 @@
 .details{
     width: 90%;
 }
+
+.as-card #LoginFormContainer{
+    height: 106vh;
+}
 .details{
     border: 1px solid black;
 }
@@ -70,7 +74,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 72vh;
+    height: 80vh;
     overflow: hidden;
     grid-gap: 5px;
     grid-template-columns: repeat(2, 1fr);
@@ -86,7 +90,9 @@ input{
     /* background: #000; */
     height: 63px;
   }
- 
+  .as-card #loginForm  #checkbox label:before, .as-card #loginForm  #checkbox label:after {
+    content: none;
+  }
   .as-card #loginForm #checkbox input {
     display: none;
   }
@@ -107,9 +113,9 @@ input{
     flex-direction: column;
 }
 .as-card textarea{
-   font-size: 24px;
+   font-size: 20px;
    padding-left: 0;
-   margin-top: 2vh;
+   /* margin-top: 2vh; */
 }
 .as-card input{
    padding-left: 0;
@@ -117,14 +123,20 @@ input{
 }
 .as-card #containaer{
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  column-gap: 2vh;
 }
 .as-card .twitter{
   flex: 0.3;
+
+}
+.as-card .twitter>input{
+ align-self: center;
 }
 
 .as-card .codepen{
     flex: 0.3;
+   
 }
 
 #clearData,
@@ -209,14 +221,14 @@ input{
     }
 
 .as-card #previewImage{
-   height: 128px;
-   width: 128px;
+   height: 100px;
+   width: 100px;
 }
 .as-card #imgConatainer,
 .as-card #imageHere,
 .as-card #C>h2{
    width: 100%;
-   border: 2px solid #111827;
+   /* border: 2px solid #111827; */
 }
 .as-card .header>h1,
 .as-card #imageHere>h2,
@@ -236,7 +248,7 @@ display: block;
 }
 .as-card .twitter>input,
 .as-card .codepen>input{
- height: 30%;
+ height: 20%;
 }
 
 @media screen and (max-width:800px) {
@@ -296,7 +308,6 @@ flex: 0.63;
 
 .as-card #loginForm{
     position: relative;
-    height: 72vh;
     top: -1.5vh;
 
 }
@@ -318,6 +329,10 @@ flex: 0.63;
     }
     #imageHere{
         font-size: 16px;
+    }
+    #previewImage{
+        height: 17vh;
+        width:  17vh;
     }
  }
 

@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="form.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="box-border overflow-hidden p-0 m-0 italic font-bold">
+<body class="box-border  p-0 m-0 italic font-bold">
     <!-- music sounds -->
     <div>
         <audio src="sounds/sounds.mp3"  autoplay loop id="audio"></audio>
     </div>
-    <div class="  flex flex-col absolute justify-center items-center h-screen main-content w-full" id="LoginFormContainer">
+    <div class="  flex flex-col absolute justify-center items-center  main-content h-full w-full" id="LoginFormContainer">
         <div class="bg-white id__wrapper rounded-lg flex flex-col justify-center items-center max-w-3xl w-4/5 h-4/6" id="loginForm">
             <span></span>
             <div class="flex text-3xl  flex flex-col text-gray-900 justify-center items-center flex-[0.16] header">
@@ -39,7 +39,7 @@
 
                              <input type="file" id="imageInput" class="hidden your-face  flex-[1]" accept="image/*">
 
-                             <div class="flex flex-[1] bg-black justify-center overflow-hidden cursor-default bg-gray-400 flex-col items-center hidden"  id="imgConatainer">
+                             <div class="flex flex-[1] bg-black justify-center overflow-hidden cursor-default bg-gray-900 bg-opacity-20 flex-col items-center hidden"  id="imgConatainer">
                                 <div  id="previewImage" class=" bg-gray-400 bg-opacity-70 bg-blend-multiply rounded-full bg-cover h-52 w-52 bg-center"></div>     
                              </div>
                           </div>
@@ -52,49 +52,45 @@
                         <div  class="flex text-gray-900 w-11/12 justify-between  flex-[0.22]" id="jobTitl">
                             <div class="flex-[0.48] job">
                                 <label for="">Job Title</label>
-                                <input type="text" class="w-full h-10 outline-none  pl-5">
+                                <input type="text" class="w-full h-10 input outline-none  pl-5">
                             </div>
                             <div class=" flex-[0.48] country">
                                 <label for="">Location</label>
-                                <input type="text" class="w-full h-10 outline-none  pl-5">
+                                <input type="text" class="w-full h-10 input outline-none  pl-5">
                             </div>
                         </div>
-                        <div  class="flex  text-gray-900  w-11/12 justify-between  flex-[0.22]" id="containaer">
-                            <div class="flex-[0.48] twitter">
+                        <div  class="flex  text-gray-900  w-11/12 justify-between items-center flex-[0.22]" id="containaer">
+                            <div class="flex-[0.48] flex flex-col twitter">
                                 <label for="">Twitter</label>
-                                      <input type="text" class="w-full h-10 outline-none pl-1.5" value="@">
+                                      <input type="text" class="w-full h-10 input outline-none pl-1.5" value="@">
                             </div>
-                            <div class=" flex-[0.48] codepen">
+                            <div class=" flex-[0.48]  codepen >
                                 <label for="">Codepen</label>
                                     <input type="text" class="w-full h-10 outline-none  pl-1.5" value="@">
                              
                             </div>
                         </div>
-                        <div  class="flex w-11/12 flex-col blood flex-[0.34]">
-                            <label for="Your Eapertise" class="flex-[0.05] text-gray-900">Your Eapertise</label>
+                        <div  class="flex w-11/12 flex-col   flex-[0.34]" id="Expertise">
+                            <label for="Your Expertise" class="flex-[0.05] text-gray-900">Your Expertise</label>
                             <div class="flex-[0.9] w-11/12 text-gray-900" id="checkbox">
-                              <div class="flex items-center w-4/5 gap-x-3">
-                                <input type="checkbox" id="btn1" value="1" checked="checked">
-                                <label for="btn1" class="label-check">Design</label>
-                              </div>
-                              
+
                               <div class="flex items-center gap-x-3">
-                                <input id="design"  type="checkbox" value="2" />
+                                <input id="design"  type="checkbox" value="1" checked=""checked />
+                                <label for="btn2" class="label-check">Design</label>
+                              </div>
+                              <div class="flex items-center gap-x-3">
+                                <input id="FrontendDev"  type="checkbox" value="2" />
                                 <label for="btn2" class="label-check">Front-end Dev</label>
                               </div>
-                              
                               <div class="flex items-center gap-x-3">
-                                <input type="checkbox" value="3" id="btn3">
-                                <label for="btn3" class="label-check">Product</label>
+                                <input id="Product"  type="checkbox" value="3" />
+                                <label for="btn2" class="label-check">Product</label>
                               </div>
                               <div class="flex items-center gap-x-3">
-                                <input type="checkbox" value="3" id="btn4">
-                                <label for="btn3" class="label-check">other</label>
+                                <input id="other"  type="checkbox" value="4" />
+                                <label for="btn2" class="label-check">other</label>
                               </div>
-                              
-                              
-                              
-                                
+                     
                             </div>
                         </div>
                     </div>
@@ -116,7 +112,6 @@
             <button class="bg-gray-500 rounded-lg js-switch w-32 h-12 text-white" id="click">Click</button>
             <button class="bg-gray-500 rounded-lg w-32 h-12 text-white hidden" id="saveDtaails">save</button>
             <button  class=" bg-gray-500 w-32 h-12 text-white rounded-lg hidden" id="clearData">Clear Data</button>
-
         </div>
     </div>
     <div class="bg-gray-600 hidden w-full absolute flex justify-center" id="message">

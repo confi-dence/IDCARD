@@ -8,14 +8,23 @@ const myaudio = document.getElementById('audio'),
   Edit = document.getElementById('Edit'),
   messagesaved = document.getElementById('message'),
   messageClear = document.getElementById('messageClear'),
-  clearData = document.getElementById('clearData')
+  clearData = document.getElementById('clearData'),
+  containaer = document.getElementById('containaer'),
+  Expertise = document.getElementById('Expertise'),
+  inputs = document.querySelectorAll('input'),
+  userName = document.getElementById('userName')
 
 let uploadedImageData = null; // To hold image temporarily
 
 // Toggle view
 switchCarsd.addEventListener('click', function () {
+  const parent = containaer.parentNode
   document.body.classList.toggle('as-card');
   switchCarsd.style.display = 'none'
+  parent.insertBefore(Expertise, containaer)
+  // inputs.style.display= "none"
+  userName.disabled = true
+  inputs.forEach(search=> search.disabled = true)
 });
 
 // Background music volume
@@ -99,5 +108,6 @@ imageHere.addEventListener('click', function () {
   if (!document.body.classList.contains('as-card')) {
     imageInput.click();
     imageHere.style.cursor = 'default'
+    
   }
 });
