@@ -74,19 +74,16 @@ input{
     align-items: center;
     height: 75vh;
     overflow: hidden;
-    grid-gap: 5px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 60px repeat(4, auto);
-    grid-template-areas: "your-face your-face" "name name" "job job" "country country" "blood blood" "twitter codepen";
 }
 .as-card #loginForm input, .as-card #loginForm textarea {
-    background: transparent;
+    background-color: transparent;
     border: none;
+    /* display: none; */
   }
   .as-card #loginForm textarea {
     line-height: 0.9;
     /* background: #000; */
-    height: 63px;
+    height: 50px;
   }
   .as-card #loginForm  #checkbox label:before, .as-card #loginForm  #checkbox label:after {
     content: none;
@@ -301,10 +298,10 @@ flex: 0.25;
 flex: 0.73;
 }
 #img{
-flex: 0.35;
+flex: 0.38;
 }
 #Logindetails{
-flex: 0.63;
+flex: 0.6;
 }
 
 .as-card #loginForm{
@@ -312,8 +309,11 @@ flex: 0.63;
     top: -1.5vh;
 
 }
+.twitter>input{
+width: 100%;
+}
  }
-@media screen and (max-width:400px) {
+@media screen and (max-width:550px) {
     @keyframes hello {
         0%{
             width: 83%;
@@ -335,6 +335,52 @@ flex: 0.63;
         height: 17vh;
         width:  17vh;
     }
-   
+    #checkbox{
+        grid-template-columns: auto;
+    }
+    #containaer{
+        flex-direction: column;
+    }
+    #jobTitl{
+        flex-direction: column;
+    }
+   .as-card #checkbox{
+        grid-template-columns: auto auto auto;
+    }
+   .as-card #containaer{
+        flex-direction: row;
+    }
+   .as-card #jobTitl{
+        flex-direction: row;
+    }
+    #Logindetails{
+        overflow-y: scroll;
+        }
+        .as-card #Logindetails{
+            overflow-y: hidden;
+        }
+        #sub-details{
+            height: 350px;
+        }
+        #fullInput{
+            margin-top: 5px;
+        }
+        #Expertise{
+            margin-bottom: 10px;
+        }
+        #Logindetails::-webkit-scrollbar-track {
+            background: #D1D5DB; /* light gray track */
+          }
+          
+          #Logindetails::-webkit-scrollbar-thumb {
+            background-color:  #9CA3AF; /* Tailwind's indigo-600 */
+            border-radius: 6px;
+            border: 3px solid #9CA3AF;
+          }
+          
+          /* Optional: for Firefox */
+          #Logindetails{
+            scrollbar-color:   #9ca3af59 #d1d5db50;
+          }
+          
  }
-

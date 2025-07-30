@@ -12,7 +12,8 @@ const myaudio = document.getElementById('audio'),
   containaer = document.getElementById('containaer'),
   Expertise = document.getElementById('Expertise'),
   inputs = document.querySelectorAll('input'),
-  userName = document.getElementById('userName')
+  userName = document.getElementById('userName'),
+  fronts = document.getElementById('front')
 
 let uploadedImageData = null; // To hold image temporarily
 
@@ -43,7 +44,7 @@ saveDtaails.addEventListener('click', function () {
   if (document.body.classList.contains('as-card')) {
     localStorage.setItem('mode', 'save');
     localStorage.setItem('fullName', userName.value);
-
+localStorage.setItem('checkbox', fronts.key)
     inputs.forEach((input, index) => {
       localStorage.setItem(`input-${index}`, input.value);
     });
@@ -76,6 +77,7 @@ clearData.addEventListener('click', function () {
 let savemode = localStorage.getItem('mode');
 const storedImage = localStorage.getItem('userImage');
 const storedFullName = localStorage.getItem('fullName');
+const storedCheckValue = localStorage.getItem('checkbox');
 if (savemode === 'save') {
   document.body.classList.add('as-card');
   saveDtaails.style.display = 'none';
@@ -95,6 +97,9 @@ if (savemode === 'save') {
   
   if (storedFullName) {
     userName.value = storedFullName;
+  }
+  if (storedCheckValue) {
+    fronts.key = storedCheckValue;
   }
 
  

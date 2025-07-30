@@ -12,8 +12,8 @@
     <div>
         <audio src="sounds/sounds.mp3"  autoplay loop id="audio"></audio>
     </div>
-    <div class="  flex flex-col absolute justify-center items-center  main-content h-full w-full" id="LoginFormContainer">
-        <div class="bg-white id__wrapper rounded-lg flex flex-col justify-center items-center max-w-3xl w-4/5 h-4/6" id="loginForm">
+    <div class="  flex flex-col absolute  justify-center items-center overflow-hidden  main-content h-full w-full" id="LoginFormContainer">
+        <div class="bg-white id__wrapper max-w-3xl rounded-lg flex flex-col justify-center items-center  w-4/5 h-4/6" id="loginForm">
             <span></span>
             <div class="flex text-3xl  flex flex-col text-gray-900 justify-center items-center flex-[0.16] header">
                 <h1>Attendee Information Form</h1>
@@ -21,10 +21,10 @@
                 <div class="hidden button"></div>
                 <span class="hidden">ID card</span>
             </div>
-            <div class="flex justify-center rounded-lg items-center flex-[0.8] details">
-                <div class="flex-[0.9]  flex justify-between flex-row">
-                    <div class="flex-[0.35] flex flex-col justify-center  max-w-3xl" id="img">
-                        <div class="upload-container rounded-lg cursor-pointer flex flex-[1] overflow-hidden">
+            <div class="flex justify-center max-w-3xl rounded-lg items-center flex-[0.8] details">
+                <div class="flex-[0.9] flex justify-between max-w-3xl flex-row" id="sub-details">
+                    <div class="flex-[0.35] flex flex-col max-w-3xl justify-center" id="img">
+                        <div class="upload-container rounded-lg cursor-pointer flex flex-[1]">
                             <!-- <div class="flex flex-[1] justify-center flex-col items-center" id="imageHere">
                             <h2 class="bg-gray-500 flex-[1] flex justify-center items-center text-white text-xl w-52">Upload an Image</h2>
                             <span class="bg-gray-600 flex-[1] flex hidden justify-center items-center text-white text-xl w-52">No image Here Please</span>
@@ -39,17 +39,17 @@
 
                              <input type="file" id="imageInput" class="hidden your-face  flex-[1]" accept="image/*">
 
-                             <div class="flex flex-[1] bg-black justify-center overflow-hidden cursor-default bg-gray-900 bg-opacity-20 flex-col items-center hidden"  id="imgConatainer">
+                             <div class="flex flex-[1] bg-black justify-center cursor-default bg-gray-900 bg-opacity-20 flex-col items-center hidden"  id="imgConatainer">
                                 <div  id="previewImage" class=" bg-gray-400 bg-opacity-70 bg-blend-multiply rounded-full bg-cover h-52 w-52 bg-center"></div>     
                              </div>
                           </div>
                     </div>
-                    <div class="flex-[0.63] flex flex-col justify-center items-center bg-gray-200 rounded-lg" id="Logindetails">
-                        <div class="flex flex-[0.22] name text-gray-900 w-11/12 flex-col justify-around items-center">
+                    <div class="flex flex-col flex-[0.6] bg-gray-200 items-center max-w-3xl rounded-lg" id="Logindetails">
+                        <div class="flex h-72 flex-[0.3] name text-gray-900 w-11/12 flex-col justify-center gap-y-2 items-center" id="fullInput">
                            <label class="self-start ">Full Name</label> 
                            <textarea class="h-10 w-full outline-none resize-none pt-1.5 pl-5" id="userName"></textarea>
                         </div>
-                        <div  class="flex text-gray-900 w-11/12 justify-between  flex-[0.22]" id="jobTitl">
+                        <div  class="flex text-gray-900  h-72 flex-[0.22] w-11/12 justify-between " id="jobTitl">
                             <div class="flex-[0.48] job">
                                 <label for="">Job Title</label>
                                 <input type="text" class="w-full h-10 input outline-none  pl-5">
@@ -59,36 +59,38 @@
                                 <input type="text" class="w-full h-10 input outline-none  pl-5">
                             </div>
                         </div>
-                        <div  class="flex  text-gray-900  w-11/12 justify-between items-center flex-[0.22]" id="containaer">
-                            <div class="flex-[0.48] flex flex-col twitter">
-                                <label for="">Twitter</label>
-                                      <input type="text" class="w-full h-10 input outline-none pl-1.5" value="@">
+                        <div  class="flex h-72 flex-[0.22] text-gray-900 w-11/12 justify-between items-center" id="containaer">
+                           
+                            <div class=" flex-[0.48]  twitter" >
+                                <label>Twitter</label>
+                                    <input type="text" class="w-full h-10 outline-none  pl-1.5" value="@">
+                             
                             </div>
-                            <div class=" flex-[0.48]  codepen >
-                                <label for="">Codepen</label>
+                            <div class=" flex-[0.48]  codepen" >
+                                <label>Codepen</label>
                                     <input type="text" class="w-full h-10 outline-none  pl-1.5" value="@">
                              
                             </div>
                         </div>
-                        <div  class="flex w-11/12 flex-col   flex-[0.34]" id="Expertise">
+                        <div  class="flex w-11/12 flex-col  h-96 flex-[0.25]" id="Expertise">
                             <label for="Your Expertise" class="flex-[0.05] text-gray-900">Your Expertise</label>
                             <div class="flex-[0.9] w-11/12 text-gray-900" id="checkbox">
 
                               <div class="flex items-center gap-x-3">
                                 <input id="design"  type="checkbox" value="1" checked=""checked />
-                                <label for="btn2" class="label-check input">Design</label>
+                                <label for="btn2" class="label-check check">Design</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="FrontendDev"  type="checkbox" value="2" />
-                                <label for="btn2" class="label-check input">Front-end Dev</label>
+                                <label for="btn2" id="front" class="label-check check">Front-end Dev</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="Product"  type="checkbox" value="3" />
-                                <label for="btn2" class="label-check input">Product</label>
+                                <label for="btn2" class="label-check check">Product</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="other"  type="checkbox" value="4" />
-                                <label for="btn2" class="label-check input">other</label>
+                                <label for="btn2" class="label-check check">other</label>
                               </div>
                      
                             </div>
@@ -108,16 +110,16 @@
             <div class="bar" style="--i:2;"></div>
             <div class="bar" style="--i:1;"></div>
         </div>
-        <div class="click flex-[0.3] mt-2  gap-x-11 flex justify-center items-center  max-w-3xl w-4/5" id="buttonCon">
+        <div class="click flex-[0.3] mt-2  gap-x-11 flex justify-center items-center   w-4/5" id="buttonCon">
             <button class="bg-gray-500 rounded-lg js-switch w-32 h-12 text-white" id="click">Click</button>
             <button class="bg-gray-500 rounded-lg w-32 h-12 text-white hidden" id="saveDtaails">save</button>
             <button  class=" bg-gray-500 w-32 h-12 text-white rounded-lg hidden" id="clearData">Clear Data</button>
         </div>
     </div>
-    <div class="bg-gray-600 hidden w-full absolute flex justify-center" id="message">
-        <p class="text-white">Data has been saved</p>
+    <div class="bg-gray-600 hidden w-full h-8 absolute flex items-center justify-center" id="message">
+        <p class="text-white ">Data has been saved</p>
     </div>
-    <div class="bg-gray-600 hidden w-full absolute flex justify-center" id="messageClear">
+    <div class="bg-gray-600 hidden w-full h-8 absolute flex items-center justify-center" id="messageClear">
         <p class="text-white">Data has been successfully cleared</p>
     </div>
 
