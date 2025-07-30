@@ -313,7 +313,7 @@ flex: 0.6;
 width: 100%;
 }
  }
-@media screen and (max-width:550px) {
+@media screen and (max-width:400px) {
     @keyframes hello {
         0%{
             width: 83%;
@@ -361,6 +361,7 @@ width: 100%;
         }
         #sub-details{
             height: 350px;
+            background: #000;
         }
         #fullInput{
             margin-top: 5px;
