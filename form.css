@@ -85,8 +85,14 @@ input{
     /* background: #000; */
     height: 50px;
   }
+  .as-card #loginForm textarea::placeholder {
+   display: none;
+  }
   .as-card #loginForm  #checkbox label:before, .as-card #loginForm  #checkbox label:after {
     content: none;
+  }
+  .as-card #Expert{
+    display: none;
   }
   .as-card #loginForm #checkbox input {
     display: none;
@@ -95,13 +101,26 @@ input{
 .as-card #loginForm #checkbox>div>input:not(:checked) + label {
   display: none;
 }
+.as-card #loginForm #checkbox>div>label,
+.as-card #jobTitl>div> input,
+.as-card #userName{
+  color: #7F1D1D;
+}
+.as-card #userName{
+  color: #6d1515;
+}
+
+.as-card #containaer>div>label{
+  color:  #374151d7;
+}
+
 .as-card #checkbox{
     grid-template-columns: auto auto auto;
 } 
-.as-card .name label:not(.label-check),
-.as-card .job label:not(.label-check),
-.as-card .country label:not(.label-check),
-.as-card .blood label:not(.label-check) {
+.as-card .name label,
+.as-card .job label,
+.as-card .country label,
+.as-card .blood label {
   display: none;
 }
 .as-card #jobTitl{
@@ -361,7 +380,10 @@ width: 100%;
         }
         #sub-details{
             height: 350px;
-            background: #000;
+        }
+        .header>h1,
+        .header>span{
+            font-size: 24px;
         }
         #fullInput{
             margin-top: 5px;

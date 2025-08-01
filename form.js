@@ -13,13 +13,17 @@ const myaudio = document.getElementById('audio'),
   Expertise = document.getElementById('Expertise'),
   inputs = document.querySelectorAll('input'),
   userName = document.getElementById('userName'),
-  fronts = document.getElementById('front')
+  job = document.getElementById('job'),
+  twitter = document.getElementById('twitter'),
+  codepen = document.getElementById('codepen'),
+  country = document.getElementById('country')
+  // fronts = document.querySelectorAll('checks')
 
 let uploadedImageData = null; // To hold image temporarily
 
 // Toggle view
+const parent = containaer.parentNode
 switchCarsd.addEventListener('click', function () {
-  const parent = containaer.parentNode
   document.body.classList.toggle('as-card');
   switchCarsd.style.display = 'none'
   parent.insertBefore(Expertise, containaer)
@@ -44,16 +48,34 @@ saveDtaails.addEventListener('click', function () {
   if (document.body.classList.contains('as-card')) {
     localStorage.setItem('mode', 'save');
     localStorage.setItem('fullName', userName.value);
-localStorage.setItem('checkbox', fronts.key)
-    inputs.forEach((input, index) => {
-      localStorage.setItem(`input-${index}`, input.value);
-    });
+    localStorage.setItem('twitter', twitter.value);
+    
+    localStorage.setItem('codepen', codepen.value);
+    localStorage.setItem('job', job.value);
+    localStorage.setItem('country', country.value);
+ 
+   // Get all checked checkboxes in the expertise section
+   const checkedLabels = [];
+   const checkboxes = document.querySelectorAll('#checkbox input[type="checkbox"]');
+   checkboxes.forEach((checkbox) => {
+     if (checkbox.checked) {
+       const label = checkbox.nextElementSibling?.innerText.trim();
+       if (label) {
+         checkedLabels.push(label);
+       }
+     }
+   });
 
+   // Save checked labels as JSON
+   localStorage.setItem('expertiseLabels', JSON.stringify(checkedLabels));
+
+    
     if (uploadedImageData) {
       localStorage.setItem('userImage', uploadedImageData);
     }
     switchCarsd.style.display = 'none'
     // alert('Saved');
+    parent.insertBefore(Expertise, containaer)
     saveDtaails.style.display = 'none';
     messagesaved.style.display = "flex";
     // imageHere.removeEventListener();
@@ -77,33 +99,51 @@ clearData.addEventListener('click', function () {
 let savemode = localStorage.getItem('mode');
 const storedImage = localStorage.getItem('userImage');
 const storedFullName = localStorage.getItem('fullName');
+const storeTwitter = localStorage.getItem('twitter');
+const storeCodePen = localStorage.getItem('codepen');
+const storejob = localStorage.getItem('job');
+const storecountry = localStorage.getItem('country');
 const storedCheckValue = localStorage.getItem('checkbox');
 if (savemode === 'save') {
   document.body.classList.add('as-card');
   saveDtaails.style.display = 'none';
-
+  parent.insertBefore(Expertise, containaer)
+  userName.disabled = true
+  inputs.forEach(search=> search.disabled = true)
   if (storedImage) {
     previewImage.style.backgroundImage = `url('${storedImage}')`;
     previewImage.style.display = "flex";
     imgConatainer.style.display = "flex";
     imageHere.style.display = 'none';
   }
-  inputs.forEach((input, index) => {
-    const savedValue = localStorage.getItem(`input-${index}`);
-    if (savedValue !== null) {
-      input.value = savedValue;
-    }
-  });
-  
   if (storedFullName) {
     userName.value = storedFullName;
   }
-  if (storedCheckValue) {
-    fronts.key = storedCheckValue;
+  if (storeTwitter) {
+    twitter.value = storeTwitter;
   }
-
+  if (storeCodePen) {
+    codepen.value = storeCodePen;
+  }
+  if (storecountry) {
+    country.value = storecountry;
+  }
+  if (storejob) {
+    job.value = storejob;
+  }
  
 }
+
+const savedLabels = JSON.parse(localStorage.getItem('expertiseLabels') || '[]');
+const checkboxes = document.querySelectorAll('#checkbox input[type="checkbox"]');
+
+checkboxes.forEach((checkbox) => {
+  const label = checkbox.nextElementSibling?.innerText.trim();
+  if (savedLabels.includes(label)) {
+    checkbox.checked = true;
+  }
+});
+
 
 // IMAGE UPLOAD
 imageInput.addEventListener('change', function () {

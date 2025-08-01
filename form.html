@@ -32,7 +32,7 @@
                              <div  class="flex flex-[1] bg-black justify-center cursor-default bg-gray-400 flex-col items-center hidden" id="imgConatainer">
                                 <div  id="previewImage" class=" bg-gray-400 bg-opacity-70 bg-blend-multiply rounded-full bg-cover bg-center h-52 w-52"></div>     
                              </div> -->
-                             <div class="flex bg-gray-500 flex-[1] text-xl justify-center items-center bg-black flex-col" id="imageHere">
+                             <div class="flex bg-gray-500 flex-[1] text-xl justify-center rounded-lg items-center bg-black flex-col" id="imageHere">
                                 <h2 class="text-white text-center pl-1">Upload an Image</h2>
                                 <span class="text-center hidden text-white ">No image Here Please</span>
                              </div>
@@ -49,48 +49,48 @@
                            <label class="self-start ">Full Name</label> 
                            <textarea class="h-10 w-full outline-none resize-none pt-1.5 pl-5" id="userName"></textarea>
                         </div>
-                        <div  class="flex text-gray-900  h-72 flex-[0.22] w-11/12 justify-between " id="jobTitl">
+                        <div  class="flex text-gray-900  h-72 flex-[0.22] w-11/12 justify-between"  id="jobTitl">
                             <div class="flex-[0.48] job">
                                 <label for="">Job Title</label>
-                                <input type="text" class="w-full h-10 input outline-none  pl-5">
+                                <input type="text" class="w-full h-10 input outline-none  pl-5" id="job">
                             </div>
                             <div class=" flex-[0.48] country">
-                                <label for="">Location</label>
-                                <input type="text" class="w-full h-10 input outline-none  pl-5">
+                                <label for="">Country</label>
+                                <input type="text" class="w-full h-10 input outline-none  pl-5" id="country">
                             </div>
                         </div>
                         <div  class="flex h-72 flex-[0.22] text-gray-900 w-11/12 justify-between items-center" id="containaer">
                            
                             <div class=" flex-[0.48]  twitter" >
                                 <label>Twitter</label>
-                                    <input type="text" class="w-full h-10 outline-none  pl-1.5" value="@">
+                                    <input type="text" class="w-full h-10 outline-none input pl-1.5" value="@" id="twitter">
                              
                             </div>
                             <div class=" flex-[0.48]  codepen" >
                                 <label>Codepen</label>
-                                    <input type="text" class="w-full h-10 outline-none  pl-1.5" value="@">
+                                    <input type="text" class="w-full h-10 outline-none input pl-1.5" value="@" id="codepen">
                              
                             </div>
                         </div>
                         <div  class="flex w-11/12 flex-col  h-96 flex-[0.25]" id="Expertise">
-                            <label for="Your Expertise" class="flex-[0.05] text-gray-900">Your Expertise</label>
+                            <label for="Your Expertise" id="Expert" class="flex-[0.05] text-gray-900">Your Expertise</label>
                             <div class="flex-[0.9] w-11/12 text-gray-900" id="checkbox">
 
                               <div class="flex items-center gap-x-3">
-                                <input id="design"  type="checkbox" value="1" checked=""checked />
-                                <label for="btn2" class="label-check check">Design</label>
+                                <input id="design"  type="checkbox" value="1" checked="" />
+                                <label for="btn2" class="label-check checks">Design</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="FrontendDev"  type="checkbox" value="2" />
-                                <label for="btn2" id="front" class="label-check check">Front-end Dev</label>
+                                <label for="btn2"  class="label-check checks">Front-end Dev</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="Product"  type="checkbox" value="3" />
-                                <label for="btn2" class="label-check check">Product</label>
+                                <label for="btn2" class="label-check checks">Product</label>
                               </div>
                               <div class="flex items-center gap-x-3">
                                 <input id="other"  type="checkbox" value="4" />
-                                <label for="btn2" class="label-check check">other</label>
+                                <label for="btn2" class="label-check checks">other</label>
                               </div>
                      
                             </div>
@@ -111,7 +111,7 @@
             <div class="bar" style="--i:1;"></div>
         </div>
         <div class="click flex-[0.3] mt-2  gap-x-11 flex justify-center items-center   w-4/5" id="buttonCon">
-            <button class="bg-gray-500 rounded-lg js-switch w-32 h-12 text-white" id="click">Click</button>
+            <button type="submit" class="bg-gray-500 rounded-lg js-switch w-32 h-12 text-white" id="click">Click</button>
             <button class="bg-gray-500 rounded-lg w-32 h-12 text-white hidden" id="saveDtaails">save</button>
             <button  class=" bg-gray-500 w-32 h-12 text-white rounded-lg hidden" id="clearData">Clear Data</button>
         </div>
