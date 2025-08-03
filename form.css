@@ -101,14 +101,7 @@ input{
 .as-card #loginForm #checkbox>div>input:not(:checked) + label {
   display: none;
 }
-.as-card #loginForm #checkbox>div>label,
-.as-card #jobTitl>div> input,
-.as-card #userName{
-  color: #7F1D1D;
-}
-.as-card #userName{
-  color: #6d1515;
-}
+
 
 .as-card #containaer>div>label{
   color:  #374151d7;
