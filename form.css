@@ -74,6 +74,7 @@ input{
     align-items: center;
     height: 75vh;
     overflow: hidden;
+    
 }
 .as-card #loginForm input, .as-card #loginForm textarea {
     background-color: transparent;
@@ -225,6 +226,7 @@ input{
     }
     .as-card #Logindetails{
     flex: 0.7;
+    background: #000;
     }
 
 .as-card #previewImage{
