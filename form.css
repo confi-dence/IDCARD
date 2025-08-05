@@ -1,8 +1,12 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 .header,
 .details{
     width: 90%;
 }
-
 
 .details{
     border: 1px solid black;
