@@ -226,7 +226,7 @@ input{
     }
     .as-card #Logindetails{
     flex: 0.7;
-    /* background: #000; */
+    background: #000;
     }
 
 .as-card #previewImage{
